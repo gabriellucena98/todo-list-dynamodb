@@ -1,4 +1,4 @@
-# Meu Projeto Kotlin com Spring Boot, DynamoDB e Docker
+# Projeto Kotlin com Spring Boot, DynamoDB e Docker
 
 Este projeto foi desenvolvido utilizando **Kotlin**, **Spring Boot**, **Amazon DynamoDB** como banco de dados NoSQL e **Docker** para containerização. Ele exemplifica como construir uma aplicação backend moderna com essas tecnologias.
 
