@@ -10,5 +10,6 @@ data class Category(
     val description: String?,
     val todos: List<Todo>? = null,
     val createdAt: Instant,
-    val updatedAt: Instant
+    val updatedAt: Instant,
+    val sequence: Int? = null
 )

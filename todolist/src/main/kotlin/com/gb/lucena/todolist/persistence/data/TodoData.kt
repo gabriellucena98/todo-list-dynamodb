@@ -1,9 +1,8 @@
 package com.gb.lucena.todolist.persistence.data
 
-import java.time.Instant
-import java.util.UUID
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbAttribute
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean
+import java.util.UUID
 
 @DynamoDbBean
 data class TodoData(
@@ -19,9 +18,6 @@ data class TodoData(
     @get:DynamoDbAttribute("done")
     var done: Boolean? = false,
 
-    @get:DynamoDbAttribute("created_at")
-    var createdAt: Instant? = null,
-
-    @get:DynamoDbAttribute("updated_at")
-    var updatedAt: Instant? = null
+    @get:DynamoDbAttribute("sequence")
+    var sequence: Int? = null
 )

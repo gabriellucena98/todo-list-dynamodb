@@ -1,7 +1,6 @@
 package com.gb.lucena.todolist.persistence.config
 
 import com.gb.lucena.todolist.persistence.data.CategoryData
-import java.net.URI
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials
@@ -11,6 +10,7 @@ import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema
 import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient
+import java.net.URI
 
 @Configuration
 class DynamoDBConfig {

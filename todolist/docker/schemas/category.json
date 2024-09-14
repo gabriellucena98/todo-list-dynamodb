@@ -8,6 +8,10 @@
     {
       "AttributeName": "category_id",
       "AttributeType": "S"
+    },
+    {
+      "AttributeName": "category_name",
+      "AttributeType": "S"
     }
   ],
   "KeySchema": [
@@ -23,6 +27,27 @@
   "ProvisionedThroughput": {
     "ReadCapacityUnits": 5,
     "WriteCapacityUnits": 5
-  }
+  },
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "CategoryNameIndex",
+      "KeySchema": [
+        {
+          "AttributeName": "email",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "category_name",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "KEYS_ONLY"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
+      }
+    }
+  ]
 }
-

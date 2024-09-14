@@ -1,9 +1,11 @@
 package com.gb.lucena.todolist.presentation.dto.request
 
-data class CreateCategoryRequestDTO(
-    val email: String,
+import java.util.UUID
+
+data class UpdateTodoRequestDTO(
+    val id: UUID,
     val name: String,
     val description: String?,
-    val todos: List<CreateTodoRequestDTO>? = null,
+    val done: Boolean,
     val sequence: Int? = null
 )

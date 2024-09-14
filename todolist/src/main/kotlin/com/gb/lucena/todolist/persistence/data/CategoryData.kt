@@ -1,11 +1,12 @@
 package com.gb.lucena.todolist.persistence.data
 
-import java.time.Instant
-import java.util.UUID
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbAttribute
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey
+import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSecondarySortKey
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSortKey
+import java.time.Instant
+import java.util.UUID
 
 @DynamoDbBean
 data class CategoryData(
@@ -18,6 +19,7 @@ data class CategoryData(
     var id: UUID? = null,
 
     @get:DynamoDbAttribute("category_name")
+    @get:DynamoDbSecondarySortKey(indexNames = ["CategoryNameIndex"])
     var name: String? = null,
 
     @get:DynamoDbAttribute("category_description")
@@ -30,5 +32,8 @@ data class CategoryData(
     var createdAt: Instant? = null,
 
     @get:DynamoDbAttribute("updated_at")
-    var updatedAt: Instant? = null
+    var updatedAt: Instant? = null,
+
+    @get:DynamoDbAttribute("sequence")
+    var sequence: Int? = null
 )

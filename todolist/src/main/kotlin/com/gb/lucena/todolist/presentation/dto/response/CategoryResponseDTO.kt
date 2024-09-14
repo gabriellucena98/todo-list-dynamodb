@@ -9,5 +9,6 @@ data class CategoryResponseDTO(
     val description: String? = null,
     val todos: List<TodoResponseDTO>?,
     val createdAt: Instant,
-    val updatedAt: Instant
+    val updatedAt: Instant,
+    val sequence: Int? = null
 )
